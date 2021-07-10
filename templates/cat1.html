@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+
+  <meta charset="UTF-8">
+    <title>Your Survey</title>
+
+
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+
+<body>
+
+<!-- Navbar -->
+  <div class="w3-bar w3-gray w3-card w3-left-align w3-large">
+
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-gray" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="c{ url_for(survey_page) }}" class="w3-bar-item w3-button w3-padding-large w3-gray">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-gray">About Us</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-gray">Your Rights</a>
+
+  </div>
+
+
+  <div class="w3-padding-large">
+
+ <div class="w3-row-padding w3-padding-16 w3-center">
+
+        <div class="w3-third w3-left-align w3-padding-16">
+            <img src="/static/images/avditech.png" width='200px'/>
+        </div>
+        <div class=w3-two-third w3-left-align w3-padding-16">
+            <h1 class="w3-text-grey w3-padding-16">Categoria 1
+        </div>
+
+
+  {{message}}
+
+    <form action="http://localhost:5000/" id="cat1_survey_page" method="POST">
+
+      <H3>Tell us about your Community:</H3>
+
+      <div class="w3-row-padding w3-padding-16 w3-center">
+    
+
+      <div class="w3-row-padding w3-padding-16 w3-center">
+        <div class="w3-padding-large">
+          <label for="text"><b><font style="color:#27AE60; font-size: large;">Tells us more:</font></b></label><BR>
+          <textarea name="str_field" rows="4" cols="30">{{str_field}}
+          </textarea>
+        </div>
+      </div>
+
+
+      <H3>About you:</H3>
+
+      <div class="w3-row-padding w3-padding-16 w3-center">
+        <div class="w3-half w3-left-align w3-padding-16">
+          <label for="first_name"><b><font style="color:#dcdad9; font-size: large;">First name:</font></b><label><br>
+          <input type="text" name="first_name" value="{{first_name}}" required>
+        </div>
+
+        <div class="w3-half w3-left-align">
+          <label for="last_name"><b><font style="color:#dcdad9; font-size: large;">Last name:</font></b></label><br>
+          <input type="text" name="last_name" value="{{last_name}}" required>
+        </div>
+      </div>
+
+
+      <div class="w3-row-padding w3-padding-16 w3-center">
+        <div class="w3-half w3-left-align w3-padding-16">
+        <label for="email"><b><font style="color:#dcdad9; font-size: large;">Email:</font></b></label><br>
+        <input type="email" name="email" value="{{email}}">
+      </div>
+
+
+      <div class="w3-row-padding w3-padding-16 w3-center">
+        <div class="w3-half w3-left-align w3-padding-16">
+          <label for="radio_field"><b><font style="color:#27AE60; font-size: large;">Enter your gender:</font></b></label><br>
+          <input type="radio" name="radio_field" value="female"> Female</input><br>
+          <input type="radio" name="radio_field" value="male"> Male</input><br>
+          <input type="radio" name="radio_field" value="other"> Other</input>
+        </div>
+      </div>
+
+
+      <div class="w3-row-padding w3-padding-16 w3-center">
+        <input type="submit" id="submitButton" value="Próxima categoria" name="submit"
+
+        class="w3-button w3-gray w3-padding-large w3-large w3-margin-top">
+      </div>
+
+
+  </form>
+
+</div>
+
+
+<footer class="w3-container w3-gray w3-center w3-margin-top">
+
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+</body>
+</html>
