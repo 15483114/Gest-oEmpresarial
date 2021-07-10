@@ -38,49 +38,23 @@
             <img src="/static/images/globe.png" width='100px'/>
         </div>
         <div class=w3-two-third w3-left-align w3-padding-16">
-            <h1 class="w3-text-grey w3-padding-16">Survey About Critical Issues in Your Community
-          <BR><font style="color:#27AE60; font-size: small;">Information your submit will not be shared to outside parties</font></h1>
+            <h1 class="w3-text-grey w3-padding-16">Categoria 1
         </div>
 
 
   {{message}}
 
-    <form action="http://localhost:5000/" id="survey_page" method="POST">
+    <form action="http://localhost:5000/" id="cat1_survey_page" method="POST">
 
       <H3>Tell us about your Community:</H3>
 
       <div class="w3-row-padding w3-padding-16 w3-center">
-        <div class="w3-half w3-left-align w3-padding-16">
-          <label for="are_you_happy"><b><font style="color:#27AE60; font-size: large;">Are you happy?</font></b></label><br>
-
-          <SELECT class="w3-button w3-blue w3-padding-large w3-large w3-margin-top" name="are_you_happy">
-            <option value="{{are_you_happy}}" selected>{{are_you_happy}}</option> ">
-            <option value="very_happy">Very</option>
-            <option value="Somewhat_happy">Somewhat</option>
-            <option value="Neutral_happy">Not sure</option>
-            <option value="Not_very_happy">Not very</option>
-            <option value="Not_happy_at_all">Not at all</option>
-          </SELECT>
-        </div>
-
-        <div class="w3-half w3-left-align w3-padding-16">
-          <label for="recommend_this_to"><b><font style="color:#27AE60; font-size: large;">Who would you recommend <br>this survey to (multiple answers OK)?</font></b><BR>
-
-          <input type="checkbox" name='recommend_this_to' value='Family' {{Family_checked}}>
-          <label for="Family"> Your family</label><br>
-          <input type="checkbox" name='recommend_this_to' value="Friends" {{Friends_checked}}>
-          <label for="Friends"> Your friends</label><br>
-          <input type="checkbox" name='recommend_this_to' value="Colleagues" {{Colleagues_checked}}>
-          <label for="Colleagues"> Your colleagues</label><br><br>
-        </div>
-      </div>
-
-
+    
 
       <div class="w3-row-padding w3-padding-16 w3-center">
         <div class="w3-padding-large">
           <label for="text"><b><font style="color:#27AE60; font-size: large;">Tells us more:</font></b></label><BR>
-          <textarea name="tell_us_more" rows="4" cols="30">{{tell_us_more}}
+          <textarea name="str_field" rows="4" cols="30">{{str_field}}
           </textarea>
         </div>
       </div>
@@ -107,24 +81,19 @@
         <input type="email" name="email" value="{{email}}">
       </div>
 
-      <div class="w3-half w3-left-align w3-padding-16">
-        <label for="date_of_birth"><b><font style="color:#27AE60; font-size: large;">Date of birth:</font></b></label><br>
-        <input type="date" name="date_of_birth">
-       </div>
-      </div>
 
       <div class="w3-row-padding w3-padding-16 w3-center">
         <div class="w3-half w3-left-align w3-padding-16">
-          <label for="gender"><b><font style="color:#27AE60; font-size: large;">Enter your gender:</font></b></label><br>
-          <input type="radio" name="gender" value="female"> Female</input><br>
-          <input type="radio" name="gender" value="male"> Male</input><br>
-          <input type="radio" name="gender" value="other"> Other</input>
+          <label for="radio_field"><b><font style="color:#27AE60; font-size: large;">Enter your gender:</font></b></label><br>
+          <input type="radio" name="radio_field" value="female"> Female</input><br>
+          <input type="radio" name="radio_field" value="male"> Male</input><br>
+          <input type="radio" name="radio_field" value="other"> Other</input>
         </div>
       </div>
 
 
       <div class="w3-row-padding w3-padding-16 w3-center">
-        <input type="submit" id="submitButton" value="Submit your survey" name="submit"
+        <input type="submit" id="submitButton" value="Próxima categoria" name="submit"
 
         class="w3-button w3-blue w3-padding-large w3-large w3-margin-top">
       </div>
