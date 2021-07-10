@@ -3,5 +3,6 @@ html,body,h1,h2,h3,h4,h5 {
 }
 
 body {
-    background-color: orange;
+    background-color: rgb(29, 28, 27);
+    text-align: center;
 }
