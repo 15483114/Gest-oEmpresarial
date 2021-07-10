@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Example 2</title>
+    <link rel="stylesheet" href="../styles/style_pdf.css" media="all" />
+  </head>
+
+<!-- jQuery library -->
+<script src="js/jquery.min.js"></script>
+
+<!-- jsPDF library -->
+<script src="js/jsPDF/dist/jspdf.min.js"></script>
+
+  <script>
+      function convert_HTML_to_PDF(){
+          var doc = new jsPDF();
+          doc.fromHTML(elementHTML,15,15,{
+              'width':170
+          });
+          var elementHTML = $('#content').html();
+          doc.save('resultado-do-avaliado.pdf');
+      }
+  </script>
+
+  <body id= "content">
+    <header class="clearfix">
+      <div id="logo">
+        <img src="https://i.imgur.com/teCskCk.png">
+      </div>
+      <div id="company">
+        <h2 class="name">Avaliador</h2>
+        <div>Teste nome avaliador</div>
+        <div>+55 (15) 99999 - 9999</div>
+        <div><a href="mailto:company@example.com">avaliador@examplo.com</a></div>
+      </div>
+      </div>
+    </header>
+      <main>
+      <div id="details" class="clearfix">
+        <div id="client">
+          <div class="to">Nome do avaliado:</div>
+          <h2 class="name">John Doe</h2>
+          <!--<div class="address">796 Silver Harbour, TX 79273, US</div>
+          <div class="email"><a href="mailto:john@example.com">john@example.com</a></div> -->
+        </div>
+        <div id="invoice">
+          <h1>AVDITech</h1>
+          <!--<div class="date">Date of Invoice: 01/06/2014</div>
+          <div class="date">Due Date: 30/06/2014</div>-->
+        </div>
+      </div>
+      <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+			<th class="no">Item N#</th>
+            <th class="desc">Descrição</th>
+            <th class="menornota">Menor nota</th>
+            <th class="maiornota">Maior nota</th>
+            <th class="total">MÉDIA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+			<th class="no">1</th>		  
+            <td class="desc"><h3>AVALIAÇÃO DE DESEMPENHO</h3></td>
+            <td class="menornota">3</td>
+            <td class="maiornota">9</td>
+            <td class="total">7,3</td>
+          </tr>
+          <tr>
+			<th class="no">2</th>		  
+            <td class="desc"><h3>AVALIAÇÃO COMPORTAMENTAL</h3></td>
+            <td class="menornota">1</td>
+            <td class="maiornota">7</td>
+            <td class="total">6,2</td>
+          </tr>
+          <tr>
+			<th class="no">3</th>		  
+            <td class="desc"><h3>AVALIAÇÃO DE HABILIDADES PESSOAIS E SOCIAIS</h3></td>
+            <td class="menornota">5</td>
+            <td class="maiornota">8</td>
+            <td class="total">7,5</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2"></td>
+            <td colspan="2">MÉDIA FINAL</td>
+            <td>7</td>
+          </tr>
+        </tfoot>
+      </table>
+      <div id="thanks">Clique no botão abaixo para gerar o PDF</div>
+      <div id="notices">
+      </div>
+    </main>
+    <button onclick="convert_HTML_to_PDF();">Gerar PDF</button>
+    <footer>
+      Isso é um teste
+    </footer>
+  </body>
+</html>

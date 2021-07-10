@@ -11,7 +11,7 @@ app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # survey page
-@app.route("/home", methods=['POST', 'GET'])
+@app.route("/", methods=['POST', 'GET'])
 def survey_page():
     message = ''
     first_name = ''
