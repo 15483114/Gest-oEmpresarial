@@ -2,7 +2,31 @@ html,body,h1,h2,h3,h4,h5 {
     font-family: "Raleway", sans-serif
 }
 
+#logo #categoria {
+    text-align: center;
+    display:inline-block;
+    *display:inline;
+    display: flex;
+    justify-content: center;
+}   
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.fill {
+    background-color: rgb(112, 112, 112);
+}
+
+label {
+    color:black;
+}
+
 body {
-    background-color: rgb(29, 28, 27);
+    background-color: #EEEDE7;
     text-align: center;
 }
