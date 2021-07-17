@@ -16,6 +16,7 @@ survey_data = []
 # survey page
 @app.route("/", methods=['POST', 'GET'])
 def cat1_survey_page():
+
     message = ''
     first_name = ''
     last_name = ''
