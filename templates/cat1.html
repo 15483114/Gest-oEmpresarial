@@ -20,7 +20,7 @@
   <div class="w3-bar w3-gray w3-card w3-left-align w3-large">
 
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-gray" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="c{ url_for(survey_page) }}" class="w3-bar-item w3-button w3-padding-large w3-gray">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-gray">Home</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-gray">About Us</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-gray">Your Rights</a>
 
@@ -78,13 +78,17 @@
         <input type="email" name="email" value="{{email}}">
       </div>
 
+      <div class="w3-half w3-left-align w3-padding-16">
+        <label for="date_of_birth"><b><font style="color:#27AE60; font-size: large;">Date of birth:</font></b></label><br>
+        <input type="date" name="date_of_birth">
+      </div>
 
       <div class="w3-row-padding w3-padding-16 w3-center">
         <div class="w3-half w3-left-align w3-padding-16">
-          <label for="radio_field"><b><font style="color:#27AE60; font-size: large;">Enter your gender:</font></b></label><br>
-          <input type="radio" name="radio_field" value="female"> Female</input><br>
-          <input type="radio" name="radio_field" value="male"> Male</input><br>
-          <input type="radio" name="radio_field" value="other"> Other</input>
+          <label for="gender"><b><font style="color:#27AE60; font-size: large;">Enter your gender:</font></b></label><br>
+          <input type="radio" name="gender" value="female"> Female</input><br>
+          <input type="radio" name="gender" value="male"> Male</input><br>
+          <input type="radio" name="gender" value="other"> Other</input>
         </div>
       </div>
 
