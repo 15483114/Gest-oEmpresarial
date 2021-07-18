@@ -45,65 +45,86 @@
   
     {{message}}
   
-      <form action="http://localhost:5000/" id="cat1_survey_page" method="POST">
-  
-        <H3>Tell us about your Community:</H3>
-  
-        <div class="w3-row-padding w3-padding-16 w3-center">
-      
-  
-        <div class="w3-row-padding w3-padding-16 w3-center">
-          <div class="w3-padding-large">
-            <label for="text"><b><font style="color:#27AE60; font-size: large;">Tells us more:</font></b></label><BR>
-            <textarea name="str_field" rows="4" cols="30">{{str_field}}
-            </textarea>
-          </div>
-        </div>
-  
-  
-        <H3>About you:</H3>
+    <form action="http://localhost:5000/" id="cat1_survey_page" method="POST">
+
+      <div class="w3-row-padding w3-padding-16 w3-center">
+
+        <H3>Informações de indentificação:</H3>
   
         <div class="w3-row-padding w3-padding-16 w3-center">
           <div class="w3-half w3-left-align w3-padding-16">
-            <label for="first_name"><b><font style="font-size: large;">First name:</font></b><label><br>
-            <input type="text" name="first_name" value="{{first_name}}" required>
+            <label for="first_name"><b><font style="font-size: large;">Nome do examinador:</font></b><label><br>
+            <input type="text" name="nome_examinador" value="{{nome_examinador}}" required>
           </div>
   
           <div class="w3-half w3-left-align">
-            <label for="last_name"><b><font style="font-size: large;">Last name:</font></b></label><br>
-            <input type="text" name="last_name" value="{{last_name}}" required>
+            <label for="last_name"><b><font style="font-size: large;">Nome do avaliado:</font></b></label><br>
+            <input type="text" name="nome_avaliado" value="{{nome_avaliado}}" required>
           </div>
         </div>
   
   
         <div class="w3-row-padding w3-padding-16 w3-center">
           <div class="w3-half w3-left-align w3-padding-16">
-          <label for="email"><b><font style="font-size: large;">Email:</font></b></label><br>
+          <label for="email"><b><font style="font-size: large;">Email do examinador:</font></b></label><br>
           <input type="email" name="email" value="{{email}}">
         </div>
   
-        <div class="w3-half w3-left-align w3-padding-16">
-          <label for="date_of_birth"><b><font style="font-size: large;">Date of birth:</font></b></label><br>
-          <input type="date" name="date_of_birth">
-        </div>
   
         <div class="w3-row-padding w3-padding-16 w3-center">
           <div class="w3-half w3-left-align w3-padding-16">
-            <label for="gender"><b><font style="font-size: large;">Enter your gender:</font></b></label><br>
-            <input type="radio" name="gender" value="female"> Female</input><br>
-            <input type="radio" name="gender" value="male"> Male</input><br>
-            <input type="radio" name="gender" value="other"> Other</input>
+            <label for="genero"><b><font style="font-size: large;">Genêro do examinador:</font></b></label><br>
+            <input type="radio" name="genero" value="Feminino"> Feminino</input><br>
+            <input type="radio" name="genero" value="Masculino"> Masculino</input><br>
+            <input type="radio" name="genero" value="Outro"> Outro</input>
           </div>
         </div>
   
+
+        <H3>Sobre o desempenho do avaliado:</H3>
+        
+        <div class="w3-row-padding w3-padding-16 w3-center">
+          <div class="w3-padding-large">
+            <label for="text"><b>Pergunta 1.1 - <font style="font-size: large;">Conseguiu entregar tarefas no prazo e do orçamento estabelecido:</font></b></label><BR>
+            <textarea name="pergunta_1_1" rows="4" cols="30">{{pergunta_1_1}}
+            </textarea>
+          </div>
+        
+          <div class="w3-half w3-left-align w3-padding-16">
+            <label for="aval_1_1"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
+            <input type="radio" name="aval_1_1" value="1"> 1</input><br>
+            <input type="radio" name="aval_1_1" value="2"> 2</input><br>
+            <input type="radio" name="aval_1_1" value="3"> 3</input><br>
+            <input type="radio" name="aval_1_1" value="4"> 4</input><br>
+            <input type="radio" name="aval_1_1" value="5"> 5</input>
+          </div>
+        </div>
+
+        <div class="w3-row-padding w3-padding-16 w3-center">
+          <div class="w3-padding-large">
+            <label for="text"><b>Pergunta 1.2 - <font style="font-size: large;">Todas as tarefas realizadas foram de qualidade competente:</font></b></label><BR>
+            <textarea name="pergunta_1_2" rows="4" cols="30">{{pergunta_1_2}}
+            </textarea>
+          </div>
+        
+          <div class="w3-half w3-left-align w3-padding-16">
+            <label for="aval_1_2"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
+            <input type="radio" name="aval_1_2" value="1"> 1</input><br>
+            <input type="radio" name="aval_1_2" value="2"> 2</input><br>
+            <input type="radio" name="aval_1_2" value="3"> 3</input><br>
+            <input type="radio" name="aval_1_2" value="4"> 4</input><br>
+            <input type="radio" name="aval_1_2" value="5"> 5</input>
+          </div>
+        </div>
+
   
         <div class="w3-row-padding w3-padding-16 w3-center">
-          <input type="submit" id="submitButton" value="Próxima categoria" name="submit"
-  
+          <input type="submit" id="submitButton" value="Próxima categoria" name="submit" 
           class="w3-button w3-gray w3-padding-large w3-large w3-margin-top">
         </div>
-  
-  
+
+      </div>
+
     </form>
   
   </div>

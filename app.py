@@ -11,40 +11,63 @@ app = Flask(__name__)
 # get root path for account in cloud
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-survey_data = []
+id_data = []
+
+def __salvar_dados_csv():
+    str_dados = ''
+    for dado in id_data :
+        str_dados = str_dados + dado + ','
+    str_dados = str_dados + '\n'
+
+    with open(BASE_DIR + '/surveys/survey_samp_1.csv','a+') as myfile: # use a+ to append and create file if it doesn't exist
+            myfile.write(str_dados)
+
 
 # survey page
 @app.route("/", methods=['POST', 'GET'])
 def cat1_survey_page():
     message = ''
-    first_name = ''
-    last_name = ''
+    nome_examinador = ''
+    nome_avaliado = ''
     email = ''
-    gender = ''
-    str_field = ''
+    genero = ''
+    pergunta_1_1 = ''
+    aval_1_1 = ''
+    pergunta_1_2 = ''
+    aval_1_2 = ''
 
     if request.method == 'POST':
         # verefica se os campos de pesquisa estão presentes
-        str_field = request.form['str_field']
-        first_name = request.form['first_name']
-        last_name = request.form['last_name'] 
+        nome_examinador = request.form['nome_examinador']
+        nome_avaliado = request.form['nome_avaliado'] 
         email = request.form['email']
-        if 'gender' in request.form:
-            gender = request.form['gender']
-        else:
-            gender = 'NA'
+        genero = request.form['genero']
+        pergunta_1_1 = request.form['pergunta_1_1']
+        aval_1_1 = request.form['aval_1_1']
+        pergunta_1_2 = request.form['pergunta_1_2']
+        aval_1_2 = request.form['aval_1_2']
         
         # verifica se os campos essênciais estão preenchidos
         message = ''
         missing_required_answers_list = []
-        if str_field == '':
-            missing_required_answers_list.append('Tells us more')
-        if first_name == '':
-            missing_required_answers_list.append('First name')
-        if last_name == '':
-            missing_required_answers_list.append('Last name')
+        if nome_examinador == '':
+            missing_required_answers_list.append('Nome do examinador')
+        if nome_avaliado == '':
+            missing_required_answers_list.append('Nome do avaliado')
         if email == '':
-            missing_required_answers_list.append('Email')
+            missing_required_answers_list.append('Email do examinador')
+        if genero == '':
+            missing_required_answers_list.append('Genêro do examinador')
+
+        if pergunta_1_1 == '':
+            missing_required_answers_list.append('Pergunta 1.1')
+        if aval_1_1 == '':
+            missing_required_answers_list.append('Avaliação para pergunta 1.1')
+        if pergunta_1_2 == '':
+            missing_required_answers_list.append('GPergunta 1.2')
+        if aval_1_2 == '':
+            missing_required_answers_list.append('Avaliação para pergunta 1.2')
+        
 
         if len(missing_required_answers_list) > 0:
             # retorna uma string com os campos vazios
@@ -53,27 +76,34 @@ def cat1_survey_page():
                 message += '<BR>' + str(ms)
             message += '</font></div>'
         else:
+            message = ''
             # Cria marcação de tempo para entrada
             entry_time = datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
             
-            survey_data.append(entry_time)
-            survey_data.append(str_field)
-            survey_data.append(first_name)
-            survey_data.append(last_name)
-            survey_data.append(email)
-            survey_data.append(gender)
+            id_data.append(entry_time)
+            id_data.append(nome_examinador)
+            id_data.append(nome_avaliado)
+            id_data.append(email)
+            id_data.append(genero)
 
-            return render_template('cat2.html')
+            id_data.append(pergunta_1_1)
+            id_data.append(aval_1_1)
+            id_data.append(pergunta_1_2)
+            id_data.append(aval_1_2)
 
-            message = '<div class="w3-row-padding w3-padding-16 w3-center"><H3>' + str(survey_data[0]) + '</H3></div>'
+            __salvar_dados_csv()
+            #return render_template('cat2.html')
     
     return render_template('cat1.html',
                             message = Markup(message),
-                            first_name = first_name,
-                            last_name = last_name,
+                            nome_examinador = nome_examinador,
+                            nome_avaliado = nome_avaliado,
                             email = email,
-                            gender = gender,
-                            str_field = str_field)
+                            genero = genero,
+                            pergunta_1_1 = pergunta_1_1,
+                            aval_1_1 = aval_1_1,
+                            pergunta_1_2 = pergunta_1_2,
+                            aval_1_2 = aval_1_2)
 
 @app.route("/", methods=['POST', 'GET'])
 def cat2_survey_page():
