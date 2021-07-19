@@ -12,11 +12,18 @@ app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 id_data = []
+categoria_1_data = []
+categoria_2_data = []
 
 def __salvar_dados_csv():
     str_dados = ''
+
     for dado in id_data :
         str_dados = str_dados + dado + ','
+
+    for dado in categoria_1_data :
+        str_dados = str_dados + dado + ','
+
     str_dados = str_dados + '\n'
 
     with open(BASE_DIR + '/surveys/survey_samp_1.csv','a+') as myfile: # use a+ to append and create file if it doesn't exist
@@ -64,7 +71,7 @@ def cat1_survey_page():
         if aval_1_1 == '':
             missing_required_answers_list.append('Avaliação para pergunta 1.1')
         if pergunta_1_2 == '':
-            missing_required_answers_list.append('GPergunta 1.2')
+            missing_required_answers_list.append('Pergunta 1.2')
         if aval_1_2 == '':
             missing_required_answers_list.append('Avaliação para pergunta 1.2')
         
@@ -86,13 +93,13 @@ def cat1_survey_page():
             id_data.append(email)
             id_data.append(genero)
 
-            id_data.append(pergunta_1_1)
-            id_data.append(aval_1_1)
-            id_data.append(pergunta_1_2)
-            id_data.append(aval_1_2)
+            categoria_1_data.append(pergunta_1_1)
+            categoria_1_data.append(aval_1_1)
+            categoria_1_data.append(pergunta_1_2)
+            categoria_1_data.append(aval_1_2)
 
             __salvar_dados_csv()
-            #return render_template('cat2.html')
+            return render_template('cat2.html')
     
     return render_template('cat1.html',
                             message = Markup(message),
