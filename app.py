@@ -45,13 +45,13 @@ def cat1_survey_page():
 
     if request.method == 'POST':
         # verefica se os campos de pesquisa estão presentes
-        nome_examinador = request.form['nome_examinador']
-        nome_avaliado = request.form['nome_avaliado'] 
-        email = request.form['email']
-        genero = request.form['genero']
-        pergunta_1_1 = request.form['pergunta_1_1']
+        nome_examinador = request.form['nome_examinador'].strip()
+        nome_avaliado = request.form['nome_avaliado'].strip()
+        email = request.form['email'].strip()
+        genero = request.form['genero'].strip()
+        pergunta_1_1 = request.form['pergunta_1_1'].strip()
         aval_1_1 = request.form['aval_1_1']
-        pergunta_1_2 = request.form['pergunta_1_2']
+        pergunta_1_2 = request.form['pergunta_1_2'].strip()
         aval_1_2 = request.form['aval_1_2']
         
         # verifica se os campos essênciais estão preenchidos
