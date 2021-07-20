@@ -22,14 +22,12 @@
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <div class="logo-image">
       <img src="/static/images/avditech.png" class="img-fluid">
-</div>
-<!--
-<a href="c{ url_for(survey_page) }}" class="w3-bar-item w3-button w3-padding-large w3-blue">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-blue">About Us</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-blue">Your Rights</a>
--->    
-
-
+    </div>
+    <!--
+    <a href="c{ url_for(survey_page) }}" class="w3-bar-item w3-button w3-padding-large w3-blue">Home</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-blue">About Us</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-blue">Your Rights</a>
+    -->    
   </div>
 
 
@@ -42,62 +40,62 @@
     <!-- Create Form -->
     <form action="http://localhost:5000/cat3" id="cat3" method="POST">
  
-        <!-- Details -->
-        <div class="form-control">
-            <label for="name" id="label-name">
-                Mostrou-se hábil nas resoluções dos problemas, tanto ativamente quanto responsivamente.
+      <!-- Details -->
+      <div class="form-control">
+          <label for="name" id="label-name">
+              Mostrou-se hábil nas resoluções dos problemas, tanto ativamente quanto responsivamente.
 
-            </label>
-             <!-- Input Type Radio Button -->
-             <div class="w3-half w3-left-align w3-padding-16">
-              <label for="aval_3_1"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
-              <input type="radio" name="aval_3_1" value="1"> 1</input><br>
-              <input type="radio" name="aval_3_1" value="2"> 2</input><br>
-              <input type="radio" name="aval_3_1" value="3"> 3</input><br>
-              <input type="radio" name="aval_3_1" value="4"> 4</input><br>
-              <input type="radio" name="aval_3_1" value="5"> 5</input><br>
-              <input type="radio" name="aval_3_1" value="6"> 6</input><br>
-              <input type="radio" name="aval_3_1" value="7"> 7</input><br>
-              <input type="radio" name="aval_3_1" value="8"> 8</input><br>
-              <input type="radio" name="aval_3_1" value="9"> 9</input><br>
-              <input type="radio" name="aval_3_1" value="10"> 10</input>
-            </div>
-
-</div>
-
-            <div class="form-control">
-              <label for="comment">
-                 Comentários e sugestões
-              </label>
-    
-              <!-- multi-line text input control -->
-              <textarea name="pergunta_3_1" id="comment"
-                  placeholder="Enter your comment here">
-              </textarea>
+          </label>
+          <!-- Input Type Radio Button -->
+          <div class="w3-half w3-left-align w3-padding-16">
+            <label for="aval_3_1"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
+            <input type="radio" name="aval_3_1" value="1"> 1</input><br>
+            <input type="radio" name="aval_3_1" value="2"> 2</input><br>
+            <input type="radio" name="aval_3_1" value="3"> 3</input><br>
+            <input type="radio" name="aval_3_1" value="4"> 4</input><br>
+            <input type="radio" name="aval_3_1" value="5"> 5</input><br>
+            <input type="radio" name="aval_3_1" value="6"> 6</input><br>
+            <input type="radio" name="aval_3_1" value="7"> 7</input><br>
+            <input type="radio" name="aval_3_1" value="8"> 8</input><br>
+            <input type="radio" name="aval_3_1" value="9"> 9</input><br>
+            <input type="radio" name="aval_3_1" value="10"> 10</input>
           </div>
-        </div>
-  
-     
 
-        <div class="form-control">
-            <label for="email" id="label-email">
-                Foi comunicativo com todo o ambiente de trabalho, teve boa recepção de feedbacks.
+          </div>
 
+          <div class="form-control">
+            <label for="comment">
+              Comentários e sugestões
             </label>
-            <!-- Input Type Radio Button -->
-            <div class="w3-half w3-left-align w3-padding-16">
-              <label for="aval_3_2"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
-              <input type="radio" name="aval_3_2" value="1"> 1</input><br>
-              <input type="radio" name="aval_3_2" value="2"> 2</input><br>
-              <input type="radio" name="aval_3_2" value="3"> 3</input><br>
-              <input type="radio" name="aval_3_2" value="4"> 4</input><br>
-              <input type="radio" name="aval_3_2" value="5"> 5</input><br>
-              <input type="radio" name="aval_3_2" value="6"> 6</input><br>
-              <input type="radio" name="aval_3_2" value="7"> 7</input><br>
-              <input type="radio" name="aval_3_2" value="8"> 8</input><br>
-              <input type="radio" name="aval_3_2" value="9"> 9</input><br>
-              <input type="radio" name="aval_3_2" value="10"> 10</input>
-            </div>
+  
+            <!-- multi-line text input control -->
+            <textarea name="pergunta_3_1" id="comment"
+                placeholder="Enter your comment here">
+            </textarea>
+        </div>
+      </div>
+
+  
+
+      <div class="form-control">
+          <label for="email" id="label-email">
+              Foi comunicativo com todo o ambiente de trabalho, teve boa recepção de feedbacks.
+
+          </label>
+          <!-- Input Type Radio Button -->
+          <div class="w3-half w3-left-align w3-padding-16">
+            <label for="aval_3_2"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
+            <input type="radio" name="aval_3_2" value="1"> 1</input><br>
+            <input type="radio" name="aval_3_2" value="2"> 2</input><br>
+            <input type="radio" name="aval_3_2" value="3"> 3</input><br>
+            <input type="radio" name="aval_3_2" value="4"> 4</input><br>
+            <input type="radio" name="aval_3_2" value="5"> 5</input><br>
+            <input type="radio" name="aval_3_2" value="6"> 6</input><br>
+            <input type="radio" name="aval_3_2" value="7"> 7</input><br>
+            <input type="radio" name="aval_3_2" value="8"> 8</input><br>
+            <input type="radio" name="aval_3_2" value="9"> 9</input><br>
+            <input type="radio" name="aval_3_2" value="10"> 10</input>
+          </div>
 
 </div>
 
@@ -182,24 +180,24 @@
         </div>
   
         <div class="form-control">
-            <label>
-                Compartilhou de experiências pessoais com finalidade de auxiliar os demais membros do ambiente de trabalho.
-            </label>
- 
-                        <!-- Input Type Radio Button -->
-                        <div class="w3-half w3-left-align w3-padding-16">
-                          <label for="aval_3_5"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
-                          <input type="radio" name="aval_3_5" value="1"> 1</input><br>
-                          <input type="radio" name="aval_3_5" value="2"> 2</input><br>
-                          <input type="radio" name="aval_3_5" value="3"> 3</input><br>
-                          <input type="radio" name="aval_3_5" value="4"> 4</input><br>
-                          <input type="radio" name="aval_3_5" value="5"> 5</input><br>
-                          <input type="radio" name="aval_3_5" value="6"> 6</input><br>
-                          <input type="radio" name="aval_3_5" value="7"> 7</input><br>
-                          <input type="radio" name="aval_3_5" value="8"> 8</input><br>
-                          <input type="radio" name="aval_3_5" value="9"> 9</input><br>
-                          <input type="radio" name="aval_3_5" value="10"> 10</input>
-                        </div>
+          <label>
+              Compartilhou de experiências pessoais com finalidade de auxiliar os demais membros do ambiente de trabalho.
+          </label>
+
+          <!-- Input Type Radio Button -->
+          <div class="w3-half w3-left-align w3-padding-16">
+            <label for="aval_3_5"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
+            <input type="radio" name="aval_3_5" value="1"> 1</input><br>
+            <input type="radio" name="aval_3_5" value="2"> 2</input><br>
+            <input type="radio" name="aval_3_5" value="3"> 3</input><br>
+            <input type="radio" name="aval_3_5" value="4"> 4</input><br>
+            <input type="radio" name="aval_3_5" value="5"> 5</input><br>
+            <input type="radio" name="aval_3_5" value="6"> 6</input><br>
+            <input type="radio" name="aval_3_5" value="7"> 7</input><br>
+            <input type="radio" name="aval_3_5" value="8"> 8</input><br>
+            <input type="radio" name="aval_3_5" value="9"> 9</input><br>
+            <input type="radio" name="aval_3_5" value="10"> 10</input>
+          </div>
 
         </div>
   

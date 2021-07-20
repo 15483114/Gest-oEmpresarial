@@ -280,7 +280,11 @@ def cat3():
                     message += '<BR>' + str(ms)
                 message += '</font></div>'
             else:
-                message = ''
+                message = '<div class="w3-row-padding w3-padding-16 w3-center">' + \
+                            '<H2>Muito obrigado pelo seu tempo!</H2>' + \
+                          '</div>'
+                            
+                          
 
                 categoria_3_data.clear()
 
@@ -303,7 +307,7 @@ def cat3():
 
                 __salvar_dados_csv()
 
-                return redirect(url_for('results'))
+                return redirect(url_for('cat1', message = Markup(message)))
 
 
         # show the form, it wasn't submitted

@@ -11,33 +11,27 @@
 
   <title>Your Survey</title>
 
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style2.css') }}">
 </head>
 
 <body>
 
   <!-- Navbar -->
-    <div class="w3-bar w3-gray w3-card w3-left-align w3-large">
-  
-      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-gray" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-gray">Home</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-gray">About Us</a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-gray">Your Rights</a>
-  
+    <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <div class="logo-image">
+        <img src="/static/images/avditech.png" class="img-fluid">
+      </div>
+      <!--
+      <a href="c{ url_for(survey_page) }}" class="w3-bar-item w3-button w3-padding-large w3-blue">Home</a>
+          <a href="#" class="w3-bar-item w3-button w3-padding-large w3-blue">About Us</a>
+          <a href="#" class="w3-bar-item w3-button w3-padding-large w3-blue">Your Rights</a>
+      -->    
     </div>
   
   
-    <div class="w3-padding-large">
-  
-   <div class="w3-row-padding w3-padding-16 w3-center">
-  
-    <div class="w3-third w3-left-align w3-padding-16">
-        <img id='logo' src="/static/images/avditech.png" width='200px'/>
-    </div>
-    <br/>
-    <div class="w3-two-third w3-padding-16">
-        <h1 id='categoria' class="w3-text-grey w3-padding-16">Categoria 1
-    </div>
+    <h1>Sobre as habilidades pessoais e sociais do avaliado:</h1>
 
     <span class="dot fill"></span>
     <span class="dot"></span>
@@ -47,48 +41,41 @@
   
     <form action="http://localhost:5000/" id="cat1" method="POST">
 
-      <div class="w3-row-padding w3-padding-16 w3-center">
+      <div class="form-control">
 
-        <H3>Informações de indentificação:</H3>
-  
-        <div class="w3-row-padding w3-padding-16 w3-center">
-          <div class="w3-half w3-left-align w3-padding-16">
-            <label for="first_name"><b><font style="font-size: large;">Nome do examinador:</font></b><label><br>
-            <input type="text" name="nome_examinador" value="{{nome_examinador}}" required>
-          </div>
-  
-          <div class="w3-half w3-left-align">
-            <label for="last_name"><b><font style="font-size: large;">Nome do avaliado:</font></b></label><br>
-            <input type="text" name="nome_avaliado" value="{{nome_avaliado}}" required>
-          </div>
+        <div class="w3-center">
+          <b><H3>Informações de indentificação:</H3></b>
         </div>
-  
-  
-        <div class="w3-row-padding w3-padding-16 w3-center">
-          <div class="w3-half w3-left-align w3-padding-16">
-          <label for="email"><b><font style="font-size: large;">Email do examinador:</font></b></label><br>
+        
+        <div class="form-control">
+          <label for="name" id="label-name">Nome do examinador:<label><br>
+          <input type="text" name="nome_examinador" value="{{nome_examinador}}" required>
+        </div>
+          
+        <div class="form-control">
+          <label for="name" id="label-name">Nome do avaliado:</font><br>
+          <input type="text" name="nome_avaliado" value="{{nome_avaliado}}" required>
+        </div>
+        
+        <div class="form-control">
+          <label for="name" id="label-name">Email do examinador:</font><br>
           <input type="email" name="email" value="{{email}}">
         </div>
   
-  
-        <div class="w3-row-padding w3-padding-16 w3-center">
-          <div class="w3-half w3-left-align w3-padding-16">
-            <label for="genero"><b><font style="font-size: large;">Genêro do examinador:</font></b></label><br>
-            <input type="radio" name="genero" value="Feminino"> Feminino</input><br>
-            <input type="radio" name="genero" value="Masculino"> Masculino</input><br>
-            <input type="radio" name="genero" value="Outro"> Outro</input>
-          </div>
+        <div class="form-control">
+          <label for="genero">Genêro do examinador:</label>
+          <input type="radio" name="genero" value="Feminino"> Feminino</input><br>
+          <input type="radio" name="genero" value="Masculino"> Masculino</input><br>
+          <input type="radio" name="genero" value="Outro"> Outro</input> 
         </div>
   
-
-        <H3>Sobre o desempenho do avaliado:</H3>
+        <div class="w3-center">
+          <b><H3>Sobre o desempenho do avaliado:</H3></b>
+        </div>
         
-        <div class="w3-row-padding w3-padding-16 w3-center">
-          <div class="w3-padding-large">
-            <label for="text"><b>Pergunta 1.1 - <font style="font-size: large;">Conseguiu entregar tarefas no prazo e do orçamento estabelecido:</font></b></label><BR>
-            <textarea name="pergunta_1_1" rows="4" cols="30">{{pergunta_1_1}}
-            </textarea>
-          </div>
+        <div class="form-control">
+          
+          <label for="name" id="label-name">Conseguiu entregar tarefas no prazo e do orçamento estabelecido:</label>
         
           <div class="w3-half w3-left-align w3-padding-16">
             <label for="aval_1_1"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
@@ -103,14 +90,21 @@
             <input type="radio" name="aval_1_1" value="4"> 9</input><br>
             <input type="radio" name="aval_1_1" value="5"> 10</input>
           </div>
-        </div>
 
-        <div class="w3-row-padding w3-padding-16 w3-center">
-          <div class="w3-padding-large">
-            <label for="text"><b>Pergunta 1.2 - <font style="font-size: large;">Todas as tarefas realizadas foram de qualidade competente:</font></b></label><BR>
-            <textarea name="pergunta_1_2" rows="4" cols="30">{{pergunta_1_2}}
+          <div class="form-control"></div>
+            <label for="comment">
+              Comentários e sugestões
+            </label>
+  
+            <!-- multi-line text input control -->
+            <textarea name="pergunta_1_1" id="comment" rows="4" cols="30">{{pergunta_1_1}}
             </textarea>
           </div>
+        </div>
+
+        <div class="form-control">
+          
+          <label for="name" id="label-name">Todas as tarefas realizadas foram de qualidade competente:</label>
         
           <div class="w3-half w3-left-align w3-padding-16">
             <label for="aval_1_2"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
@@ -124,6 +118,16 @@
             <input type="radio" name="aval_1_2" value="4"> 8</input><br>
             <input type="radio" name="aval_1_2" value="4"> 9</input><br>
             <input type="radio" name="aval_1_2" value="5"> 10</input>
+          </div>
+
+          <div class="form-control"></div>
+            <label for="comment">
+              Comentários e sugestões
+            </label>
+  
+            <!-- multi-line text input control -->
+            <textarea name="pergunta_1_2" id="comment" rows="4" cols="30">{{pergunta_1_2}}
+            </textarea>
           </div>
         </div>
 
