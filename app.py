@@ -279,13 +279,7 @@ def cat3():
                 for ms in missing_required_answers_list:
                     message += '<BR>' + str(ms)
                 message += '</font></div>'
-            else:
-                message = '<div class="w3-row-padding w3-padding-16 w3-center">' + \
-                            '<H2>Muito obrigado pelo seu tempo!</H2>' + \
-                          '</div>'
-                            
-                          
-
+            else:                         
                 categoria_3_data.clear()
 
                 categoria_3_data.append(aval_3_1)
@@ -307,7 +301,7 @@ def cat3():
 
                 __salvar_dados_csv()
 
-                return redirect(url_for('cat1', message = Markup(message)))
+                return redirect(url_for('cat1'))
 
 
         # show the form, it wasn't submitted
