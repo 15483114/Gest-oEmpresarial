@@ -27,6 +27,10 @@ def __salvar_dados_csv():
 
     for dado in categoria_2_data :
         str_dados = str_dados + dado + ','
+
+    for dado in categoria_3_data :
+        str_dados = str_dados + dado + ','
+
     str_dados = str_dados + '\n'
 
     with open(BASE_DIR + '/surveys/survey_samp_1.csv','a+') as myfile: # use a+ to append and create file if it doesn't exist
@@ -178,7 +182,7 @@ def cat2():
             else:
                 message = ''
                 # Cria marcação de tempo para entrada
-                entry_time = datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
+               
             
                 categoria_2_data.append(aval_2_1)
                 categoria_2_data.append(aval_2_2)
@@ -210,21 +214,84 @@ def cat3():
     aval_3_7 = ''
     aval_3_8 = ''
     message = ''
+    
+
+    if request.method == 'POST':
+
+         if request.form['action'] == 'Para categoria 2':
+
+            return redirect(url_for('cat2'))
+         elif request.form['action'] == 'Submit':
+            # verefica se os campos de pesquisa estão presentes
+            aval_3_1 = request.form['aval_3_1']
+            aval_3_2 = request.form['aval_3_2']
+            aval_3_3 = request.form['aval_3_3']
+            aval_3_4 = request.form['aval_3_4']
+            aval_3_5 = request.form['aval_3_5']
+            aval_3_6 = request.form['aval_3_6']
+            aval_3_7 = request.form['aval_3_7']
+            aval_3_8 = request.form['aval_3_8']
+
+            # verifica se os campos essênciais estão preenchidos
+            message = ''
+            missing_required_answers_list = []
+    
+            if aval_3_1 == '':
+                missing_required_answers_list.append('Pergunta 3.1')
+            if aval_3_2 == '':
+                    missing_required_answers_list.append('Pergunta 3.2')
+            if aval_3_3 == '':
+                    missing_required_answers_list.append('Pergunta 3.3')
+            if aval_3_4 == '':
+                    missing_required_answers_list.append('Pergunta 3.4')
+            if aval_3_5 == '':
+                    missing_required_answers_list.append('Pergunta 3.5')
+
+            if len(missing_required_answers_list) > 0:
+                # retorna uma string com os campos vazios
+                message = '<div class="w3-row-padding w3-padding-16 w3-center"><H3>Você não preencheu os seguinte(s) campo(s):</H3><font style="color:red;">'
+                for ms in missing_required_answers_list:
+                    message += '<BR>' + str(ms)
+                message += '</font></div>'
+            else:
+                message = ''
+                # Cria marcação de tempo para entrada
+                entry_time = datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
+                categoria_3_data.append(entry_time)
+                categoria_3_data.append(aval_3_1)
+                categoria_3_data.append(aval_3_2)
+                categoria_3_data.append(aval_3_3)
+                categoria_3_data.append(aval_3_4)
+                categoria_3_data.append(aval_3_5)
+                categoria_3_data.append(aval_3_6)
+                categoria_3_data.append(aval_3_7)
+                categoria_3_data.append(aval_3_8)
+                __salvar_dados_csv()
+                return redirect(url_for('results'))
+
+
+        # show the form, it wasn't submitted
+    return render_template('cat3.html',
+                    message = Markup(message),
+                    aval_3_1 = aval_3_1,
+                    aval_3_2 = aval_3_2,
+                    aval_3_3 = aval_3_3,
+                    aval_3_4 = aval_3_4,
+                    aval_3_5 = aval_3_5,
+                    aval_3_6 = aval_3_6,
+                    aval_3_7 = aval_3_7,
+                    aval_3_8 = aval_3_8)
+
+@app.route("/results", methods=['POST', 'GET'])
+def results():
 
 
     if request.method == 'POST':
-        categoria_3_data.append(aval_3_1)
-        categoria_3_data.append(aval_3_2)
-        categoria_3_data.append(aval_3_3)
-        categoria_3_data.append(aval_3_4)
-        categoria_3_data.append(aval_3_5)
-        categoria_3_data.append(aval_3_6)
-        categoria_3_data.append(aval_3_7)
-        categoria_3_data.append(aval_3_8)
         print()
 
     # show the form, it wasn't submitted
-    return render_template('cat3.html')
+    return render_template('results.html')
+    
     
     
 
