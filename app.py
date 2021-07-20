@@ -118,8 +118,6 @@ def cat1():
                 categoria_1_data.append(pergunta_1_2)
                 categoria_1_data.append(aval_1_2)
 
-                __salvar_dados_csv()
-
                 return redirect(url_for('cat2'))
     
     return render_template('cat1.html',
@@ -136,11 +134,13 @@ def cat1():
 
 @app.route("/cat2", methods=['POST', 'GET'])
 def cat2():
+    message = ''
     aval_2_1 = ''
     aval_2_2 = ''
     aval_2_3 = ''
     aval_2_4 = ''
     aval_2_5 = ''
+    
     if request.method == 'POST':
         if request.form['action'] == 'Para categoria 1':
 
@@ -153,41 +153,41 @@ def cat2():
             aval_2_4 = request.form['aval_2_4']
             aval_2_5 = request.form['aval_2_5']
 
-        # verifica se os campos essênciais estão preenchidos
-        message = ''
-        missing_required_answers_list = []
- 
-        if aval_2_1 == '':
-            missing_required_answers_list.append('Pergunta 2.1')
-        if aval_2_2 == '':
-                missing_required_answers_list.append('Pergunta 2.2')
-        if aval_2_3 == '':
-                missing_required_answers_list.append('Pergunta 2.3')
-        if aval_2_4 == '':
-                missing_required_answers_list.append('Pergunta 2.4')
-        if aval_2_5 == '':
-                missing_required_answers_list.append('Pergunta 2.5')
-
-        if len(missing_required_answers_list) > 0:
-            # retorna uma string com os campos vazios
-            message = '<div class="w3-row-padding w3-padding-16 w3-center"><H3>Você não preencheu os seguinte(s) campo(s):</H3><font style="color:red;">'
-            for ms in missing_required_answers_list:
-                message += '<BR>' + str(ms)
-            message += '</font></div>'
-        else:
+            # verifica se os campos essênciais estão preenchidos
             message = ''
-            # Cria marcação de tempo para entrada
-            entry_time = datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
-        
-            categoria_2_data.append(aval_2_1)
-            categoria_2_data.append(aval_2_2)
-            categoria_2_data.append(aval_2_3)
-            categoria_2_data.append(aval_2_4)
-            categoria_2_data.append(aval_2_5)
+            missing_required_answers_list = []
+    
+            if aval_2_1 == '':
+                missing_required_answers_list.append('Pergunta 2.1')
+            if aval_2_2 == '':
+                    missing_required_answers_list.append('Pergunta 2.2')
+            if aval_2_3 == '':
+                    missing_required_answers_list.append('Pergunta 2.3')
+            if aval_2_4 == '':
+                    missing_required_answers_list.append('Pergunta 2.4')
+            if aval_2_5 == '':
+                    missing_required_answers_list.append('Pergunta 2.5')
 
-            __salvar_dados_csv()
+            if len(missing_required_answers_list) > 0:
+                # retorna uma string com os campos vazios
+                message = '<div class="w3-row-padding w3-padding-16 w3-center"><H3>Você não preencheu os seguinte(s) campo(s):</H3><font style="color:red;">'
+                for ms in missing_required_answers_list:
+                    message += '<BR>' + str(ms)
+                message += '</font></div>'
+            else:
+                message = ''
+                # Cria marcação de tempo para entrada
+                entry_time = datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
+            
+                categoria_2_data.append(aval_2_1)
+                categoria_2_data.append(aval_2_2)
+                categoria_2_data.append(aval_2_3)
+                categoria_2_data.append(aval_2_4)
+                categoria_2_data.append(aval_2_5)
 
-            return redirect(url_for('cat3'))
+                __salvar_dados_csv()
+
+                return redirect(url_for('cat3'))
 
     # show the form, it wasn't submitted
     return render_template('cat2.html',
