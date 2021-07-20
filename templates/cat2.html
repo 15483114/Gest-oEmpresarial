@@ -30,89 +30,56 @@
 -->    
 
 
-  </div>
+   </div >
 
 
-  <h1>Sobre o comportamento do avaliado:</h1>
+            <h1>Sobre o comportamento do avaliado:</h1>
 
-  <span class="dot fill"></span>
-  <span class="dot fill"></span>
-  <span class="dot"></span>
-  
-    <!-- Create Form -->
-    <form id="form">
- 
-        <!-- Details -->
-        <div class="form-control">
-            <label for="name" id="label-name">
-              Manteve sua postura a respeito de sua assiduidade e forma de expressão no ambiente de trabalho.
+                <span class="dot fill"></span>
+                <span class="dot fill"></span>
+                <span class="dot"></span>
+                                    
+              <!-- Create Form -->
+              {{message}}                                 
+    <form action="http://localhost:5000/cat2" id="cat2_survey_page" method="POST">
+                                  
+                                          <!-- Details -->
+                                  <div class="form-control">
+                                      <label for="name" id="label-name">
+                                        Manteve sua postura a respeito de sua assiduidade e forma de expressão no ambiente de trabalho.
+                                        <input type="text" name="cat2_p1" value="{{cat2_p1}}" required>
+                                      </label>
 
-            </label>
-  <!-- Input Type Radio Button -->
-  <label for="nota-1">
-    <input type="radio"
-            id="recommed-1"
-            name="nota-1">1</input>
-</label>
-<label for="nota-2">
-    <input type="radio"
-            id="recommed-2"
-            name="recommed">2</input>
-</label>
-<label for="nota-3">
-    <input type="radio"
-            id="recommed-3"
-            name="recommed">3</input>
-</label>
-<label for="nota-4">
-  <input type="radio"
-          id="nota-4"
-          name="recommed">4</input>
-</label>
-<label for="nota-5">
-<input type="radio"
-        id="nota-5"
-        name="recommed">5</input>
-</label>
-<label for="nota-6">
-<input type="radio"
-      id="nota-6"
-      name="recommed">6</input>
-</label>
-<label for="nota-7">
-<input type="radio"
-    id="nota-7"
-    name="recommed">7</input>
-</label>
-<label for="nota-8">
-<input type="radio"
-  id="nota-8"
-  name="recommed">8</input>
-</label>
-<label for="nota-9">
-<input type="radio"
-id="nota-9"
-name="recomend">9</input>
-</label>
-<label for="nota-10">
-<input type="radio"
-id="nota-10"
-name="recommed">10</input>
-</label>
+              
+                          <!-- Input Type Radio Button -->
+                          <div class="w3-half w3-left-align w3-padding-16">
+                            <label for="aval_2_1"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
+                            <input type="radio" name="aval_2_1" value="1"> 1</input><br>
+                            <input type="radio" name="aval_2_1" value="2"> 2</input><br>
+                            <input type="radio" name="aval_2_1" value="3"> 3</input><br>
+                            <input type="radio" name="aval_2_1" value="4"> 4</input><br>
+                            <input type="radio" name="aval_2_1" value="5"> 5</input><br>
+                            <input type="radio" name="aval_2_1" value="6"> 6</input><br>
+                            <input type="radio" name="aval_2_1" value="7"> 7</input><br>
+                            <input type="radio" name="aval_2_1" value="8"> 8</input><br>
+                            <input type="radio" name="aval_2_1" value="9"> 9</input><br>
+                            <input type="radio" name="aval_2_1" value="10"> 10</input>
+                          </div>
+                              <div class="form-control"></div>
+                              <label for="comment">
+                                Comentários e sugestões
+                              </label>
+                    
+                              <!-- multi-line text input control -->
+                              <textarea name="comment" id="comment"
+                                  placeholder="Enter your comment here">
+                              </textarea>
+                          </div>
+                        </div>
 
-</div>
-
-            <div class="form-control">
-              <label for="comment">
-                 Comentários e sugestões
-              </label>
-    
-              <!-- multi-line text input control -->
-              <textarea name="comment" id="comment"
-                  placeholder="Enter your comment here">
-              </textarea>
+                      
+                    
           </div>
-        </div>
   
      
 
@@ -121,59 +88,21 @@ name="recommed">10</input>
               Manteve o foco mesmo em momentos de tensão, situações complexas ou falta de flexibilidade nos prazos.
 
             </label>
-  <!-- Input Type Radio Button -->
-  <label for="nota-1">
-    <input type="radio"
-            id="recommed-1"
-            name="nota-1">1</input>
-</label>
-<label for="nota-2">
-    <input type="radio"
-            id="recommed-2"
-            name="recommed">2</input>
-</label>
-<label for="nota-3">
-    <input type="radio"
-            id="recommed-3"
-            name="recommed">3</input>
-</label>
-<label for="nota-4">
-  <input type="radio"
-          id="nota-4"
-          name="recommed">4</input>
-</label>
-<label for="nota-5">
-<input type="radio"
-        id="nota-5"
-        name="recommed">5</input>
-</label>
-<label for="nota-6">
-<input type="radio"
-      id="nota-6"
-      name="recommed">6</input>
-</label>
-<label for="nota-7">
-<input type="radio"
-    id="nota-7"
-    name="recommed">7</input>
-</label>
-<label for="nota-8">
-<input type="radio"
-  id="nota-8"
-  name="recommed">8</input>
-</label>
-<label for="nota-9">
-<input type="radio"
-id="nota-9"
-name="recomend">9</input>
-</label>
-<label for="nota-10">
-<input type="radio"
-id="nota-10"
-name="recommed">10</input>
-</label>
-
-</div>
+                <!-- Input Type Radio Button -->
+                <div class="w3-half w3-left-align w3-padding-16">
+                  <label for="aval_2_2"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
+                  <input type="radio" name="aval_2_2" value="1"> 1</input><br>
+                  <input type="radio" name="aval_2_2" value="2"> 2</input><br>
+                  <input type="radio" name="aval_2_2" value="3"> 3</input><br>
+                  <input type="radio" name="aval_2_2" value="4"> 4</input><br>
+                  <input type="radio" name="aval_2_2" value="5"> 5</input><br>
+                  <input type="radio" name="aval_2_2" value="6"> 6</input><br>
+                  <input type="radio" name="aval_2_2" value="7"> 7</input><br>
+                  <input type="radio" name="aval_2_2" value="8"> 8</input><br>
+                  <input type="radio" name="aval_2_2" value="9"> 9</input><br>
+                  <input type="radio" name="aval_2_2" value="10"> 10</input>
+                </div>
+              </div>
 
             <div class="form-control">
               <label for="comment">
@@ -193,59 +122,21 @@ name="recommed">10</input>
             <label for="age" id="label-age">
               Mostrou-se flexível e interessado ao enfrentar e aprender a lidar com situações fora do padrão.
             </label>
-  <!-- Input Type Radio Button -->
-  <label for="nota-1">
-    <input type="radio"
-            id="recommed-1"
-            name="nota-1">1</input>
-</label>
-<label for="nota-2">
-    <input type="radio"
-            id="recommed-2"
-            name="recommed">2</input>
-</label>
-<label for="nota-3">
-    <input type="radio"
-            id="recommed-3"
-            name="recommed">3</input>
-</label>
-<label for="nota-4">
-  <input type="radio"
-          id="nota-4"
-          name="recommed">4</input>
-</label>
-<label for="nota-5">
-<input type="radio"
-        id="nota-5"
-        name="recommed">5</input>
-</label>
-<label for="nota-6">
-<input type="radio"
-      id="nota-6"
-      name="recommed">6</input>
-</label>
-<label for="nota-7">
-<input type="radio"
-    id="nota-7"
-    name="recommed">7</input>
-</label>
-<label for="nota-8">
-<input type="radio"
-  id="nota-8"
-  name="recommed">8</input>
-</label>
-<label for="nota-9">
-<input type="radio"
-id="nota-9"
-name="recomend">9</input>
-</label>
-<label for="nota-10">
-<input type="radio"
-id="nota-10"
-name="recommed">10</input>
-</label>
-
-</div>
+                <!-- Input Type Radio Button -->
+                <div class="w3-half w3-left-align w3-padding-16">
+                  <label for="aval_2_3"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
+                  <input type="radio" name="aval_2_3" value="1"> 1</input><br>
+                  <input type="radio" name="aval_2_3" value="2"> 2</input><br>
+                  <input type="radio" name="aval_2_3" value="3"> 3</input><br>
+                  <input type="radio" name="aval_2_3" value="4"> 4</input><br>
+                  <input type="radio" name="aval_2_3" value="5"> 5</input><br>
+                  <input type="radio" name="aval_2_3" value="6"> 6</input><br>
+                  <input type="radio" name="aval_2_3" value="7"> 7</input><br>
+                  <input type="radio" name="aval_2_3" value="8"> 8</input><br>
+                  <input type="radio" name="aval_2_3" value="9"> 9</input><br>
+                  <input type="radio" name="aval_2_3" value="10"> 10</input>
+                </div>
+              </div>
 
             <div class="form-control">
               <label for="comment">
@@ -265,57 +156,19 @@ name="recommed">10</input>
 
             </label>
               <!-- Input Type Radio Button -->
-              <label for="nota-1">
-                <input type="radio"
-                        id="recommed-1"
-                        name="nota-1">1</input>
-            </label>
-            <label for="nota-2">
-                <input type="radio"
-                        id="recommed-2"
-                        name="recommed">2</input>
-            </label>
-            <label for="nota-3">
-                <input type="radio"
-                        id="recommed-3"
-                        name="recommed">3</input>
-            </label>
-            <label for="nota-4">
-              <input type="radio"
-                      id="nota-4"
-                      name="recommed">4</input>
-            </label>
-            <label for="nota-5">
-            <input type="radio"
-                    id="nota-5"
-                    name="recommed">5</input>
-            </label>
-            <label for="nota-6">
-            <input type="radio"
-                  id="nota-6"
-                  name="recommed">6</input>
-            </label>
-            <label for="nota-7">
-            <input type="radio"
-                id="nota-7"
-                name="recommed">7</input>
-            </label>
-            <label for="nota-8">
-            <input type="radio"
-              id="nota-8"
-              name="recommed">8</input>
-            </label>
-            <label for="nota-9">
-            <input type="radio"
-            id="nota-9"
-            name="recomend">9</input>
-            </label>
-            <label for="nota-10">
-            <input type="radio"
-            id="nota-10"
-            name="recommed">10</input>
-            </label>
-
+              <div class="w3-half w3-left-align w3-padding-16">
+                <label for="aval_2_4"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
+                <input type="radio" name="aval_2_4" value="1"> 1</input><br>
+                <input type="radio" name="aval_2_4" value="2"> 2</input><br>
+                <input type="radio" name="aval_2_4" value="3"> 3</input><br>
+                <input type="radio" name="aval_2_4" value="4"> 4</input><br>
+                <input type="radio" name="aval_2_4" value="5"> 5</input><br>
+                <input type="radio" name="aval_2_4" value="6"> 6</input><br>
+                <input type="radio" name="aval_2_4" value="7"> 7</input><br>
+                <input type="radio" name="aval_2_4" value="8"> 8</input><br>
+                <input type="radio" name="aval_2_4" value="9"> 9</input><br>
+                <input type="radio" name="aval_2_4" value="10"> 10</input>
+              </div>
       </div>
 
             <div class="form-control">
@@ -336,56 +189,19 @@ name="recommed">10</input>
             </label>
  
             <!-- Input Type Radio Button -->
-              <label for="nota-1">
-                  <input type="radio"
-                          id="recommed-1"
-                          name="nota-1">1</input>
-              </label>
-              <label for="nota-2">
-                  <input type="radio"
-                          id="recommed-2"
-                          name="recommed">2</input>
-              </label>
-              <label for="nota-3">
-                  <input type="radio"
-                          id="recommed-3"
-                          name="recommed">3</input>
-              </label>
-              <label for="nota-4">
-                <input type="radio"
-                        id="nota-4"
-                        name="recommed">4</input>
-              </label>
-              <label for="nota-5">
-              <input type="radio"
-                      id="nota-5"
-                      name="recommed">5</input>
-              </label>
-              <label for="nota-6">
-              <input type="radio"
-                    id="nota-6"
-                    name="recommed">6</input>
-              </label>
-              <label for="nota-7">
-              <input type="radio"
-                  id="nota-7"
-                  name="recommed">7</input>
-              </label>
-              <label for="nota-8">
-              <input type="radio"
-                id="nota-8"
-                name="recommed">8</input>
-              </label>
-              <label for="nota-9">
-              <input type="radio"
-              id="nota-9"
-              name="recomend">9</input>
-              </label>
-              <label for="nota-10">
-              <input type="radio"
-              id="nota-10"
-              name="recommed">10</input>
-              </label>
+            <div class="w3-half w3-left-align w3-padding-16">
+              <label for="aval_2_5"><b><font style="font-size: large;">Avaliação:</font></b></label><br>
+              <input type="radio" name="aval_2_5" value="1"> 1</input><br>
+              <input type="radio" name="aval_2_5" value="2"> 2</input><br>
+              <input type="radio" name="aval_2_5" value="3"> 3</input><br>
+              <input type="radio" name="aval_2_5" value="4"> 4</input><br>
+              <input type="radio" name="aval_2_5" value="5"> 5</input><br>
+              <input type="radio" name="aval_2_5" value="6"> 6</input><br>
+              <input type="radio" name="aval_2_5" value="7"> 7</input><br>
+              <input type="radio" name="aval_2_5" value="8"> 8</input><br>
+              <input type="radio" name="aval_2_5" value="9"> 9</input><br>
+              <input type="radio" name="aval_2_5" value="10"> 10</input>
+            </div>
 
         </div>
   
@@ -403,9 +219,15 @@ name="recommed">10</input>
         </div>
   
         <!-- Multi-line Text Input Control -->
-        <button type="submit" value="submit">
-            Submit
+        <div>
+          <button type="submit" action="/"value="submit">
+            Categoria 1
         </button>
+        <div class="w3-row-padding w3-padding-16 w3-center">
+          <input type="submit" id="para_cat_to_2" value="Para categoria 3" name="Para categoria 3" 
+          class="w3-button w3-gray w3-padding-large w3-large w3-margin-top">
+        </div>
+    
     </form>
 
 <footer class="w3-container w3-teal w3-center w3-margin-top">

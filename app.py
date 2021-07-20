@@ -24,6 +24,8 @@ def __salvar_dados_csv():
     for dado in categoria_1_data :
         str_dados = str_dados + dado + ','
 
+    for dado in categoria_2_data :
+        str_dados = str_dados + dado + ','
     str_dados = str_dados + '\n'
 
     with open(BASE_DIR + '/surveys/survey_samp_1.csv','a+') as myfile: # use a+ to append and create file if it doesn't exist
@@ -66,12 +68,10 @@ def cat1_survey_page():
         if genero == '':
             missing_required_answers_list.append('Genêro do examinador')
 
-        if pergunta_1_1 == '':
-            missing_required_answers_list.append('Pergunta 1.1')
+
         if aval_1_1 == '':
             missing_required_answers_list.append('Avaliação para pergunta 1.1')
-        if pergunta_1_2 == '':
-            missing_required_answers_list.append('Pergunta 1.2')
+
         if aval_1_2 == '':
             missing_required_answers_list.append('Avaliação para pergunta 1.2')
         
@@ -112,11 +112,65 @@ def cat1_survey_page():
                             pergunta_1_2 = pergunta_1_2,
                             aval_1_2 = aval_1_2)
 
-@app.route("/", methods=['POST', 'GET'])
+@app.route("/cat2", methods=['POST', 'GET'])
 def cat2_survey_page():
 
-    return ""
+    aval_2_1 = ''
+    aval_2_2 = ''
+    aval_2_3 = ''
+    aval_2_4 = ''
+    aval_2_5 = ''
+
+    if request.method == 'POST':
+        # verefica se os campos de pesquisa estão presentes
+        aval_2_1 = request.form['aval_2_1']
+        aval_2_2 = request.form['aval_2_2']
+        aval_2_3 = request.form['aval_2_3']
+        aval_2_4 = request.form['aval_2_4']
+        aval_2_5 = request.form['aval_2_5']
+
+        # verifica se os campos essênciais estão preenchidos
+        message = ''
+        missing_required_answers_list = []
+ 
+        if aval_2_1 == '':
+            missing_required_answers_list.append('Pergunta 2.1')
+        if aval_2_2 == '':
+                missing_required_answers_list.append('Pergunta 2.2')
+        if aval_2_3 == '':
+                missing_required_answers_list.append('Pergunta 2.3')
+        if aval_2_4 == '':
+                missing_required_answers_list.append('Pergunta 2.4')
+        if aval_2_5 == '':
+                missing_required_answers_list.append('Pergunta 2.5')
+
+        if len(missing_required_answers_list) > 0:
+            # retorna uma string com os campos vazios
+            message = '<div class="w3-row-padding w3-padding-16 w3-center"><H3>Você não preencheu os seguinte(s) campo(s):</H3><font style="color:red;">'
+            for ms in missing_required_answers_list:
+                message += '<BR>' + str(ms)
+            message += '</font></div>'
+        else:
+            message = ''
+            # Cria marcação de tempo para entrada
+            entry_time = datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
+        
+            categoria_2_data.append(aval_2_1)
+            categoria_2_data.append(aval_2_2)
+            categoria_2_data.append(aval_2_3)
+            categoria_2_data.append(aval_2_4)
+            categoria_2_data.append(aval_2_5)
+
+            __salvar_dados_csv()
+            return  render_template('cat3.html')
     
+    return render_template('cat2.html',
+                            message = Markup(message),
+                            aval_2_1 = aval_2_1,
+                            aval_2_2 = aval_2_2,
+                            aval_2_3 = aval_2_3,
+                            aval_2_4 = aval_2_4,
+                            aval_2_5 = aval_2_5)
 
 
 # used only in local mode
