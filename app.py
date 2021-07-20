@@ -119,8 +119,6 @@ def cat1():
                 categoria_1_data.append(pergunta_1_2)
                 categoria_1_data.append(aval_1_2)
 
-                __salvar_dados_csv()
-
                 return redirect(url_for('cat2'))
     
     return render_template('cat1.html',
@@ -137,12 +135,13 @@ def cat1():
 
 @app.route("/cat2", methods=['POST', 'GET'])
 def cat2():
+    message = ''
     aval_2_1 = ''
     aval_2_2 = ''
     aval_2_3 = ''
     aval_2_4 = ''
     aval_2_5 = ''
-    message = ''
+    
     if request.method == 'POST':
         if request.form['action'] == 'Para categoria 1':
 
@@ -156,7 +155,7 @@ def cat2():
             aval_2_5 = request.form['aval_2_5']
 
             # verifica se os campos essênciais estão preenchidos
-            
+            message = ''
             missing_required_answers_list = []
     
             if aval_2_1 == '':
