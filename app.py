@@ -325,10 +325,6 @@ def cat3():
 
 @app.route("/results", methods=['POST', 'GET'])
 def results():
-    
-    if request.method == 'POST':
-        if request.form['action'] == 'Gerar PDF':
-           return pdfkit.from_file('templates/results.html', 'demo_from_file.pdf')
         
     nome_examinador = id_data[1]
     email = id_data[3]
@@ -367,6 +363,50 @@ def results():
     obs_3_6 = categoria_3_data[13]
     obs_3_7 = categoria_3_data[14]
     obs_3_8 = categoria_3_data[15]
+
+    if request.method == 'POST':
+        if request.form['action'] == 'Gera pdf':
+
+            rendered = render_template('results.html',
+                            nome_examinador = nome_examinador,
+                            email = email,
+                            nome_avaliado = nome_avaliado,
+                            cat_1_min = cat_1_min,
+                            cat_1_max = cat_1_max,
+                            cat_1_avg = cat_1_avg,
+                            cat_2_min = cat_2_min,
+                            cat_2_max = cat_2_max,
+                            cat_2_avg = cat_2_avg,
+                            cat_3_min = cat_3_min,
+                            cat_3_max = cat_3_max,
+                            cat_3_avg = cat_3_avg,
+                            avg_total = avg_total,
+                            horario = horario,
+                            obs_1_1 = obs_1_1,
+                            obs_1_2 = obs_1_2,
+                            obs_2_1 = obs_2_1,
+                            obs_2_2 = obs_2_2,
+                            obs_2_3 = obs_2_3,
+                            obs_2_4 = obs_2_4,
+                            obs_2_5 = obs_2_5,
+                            obs_3_1 = obs_3_1,
+                            obs_3_2 = obs_3_2,
+                            obs_3_3 = obs_3_3,
+                            obs_3_4 = obs_3_4,
+                            obs_3_5 = obs_3_5,
+                            obs_3_6 = obs_3_6,
+                            obs_3_7 = obs_3_7,
+                            obs_3_8 = obs_3_8)
+            path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
+            config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
+            options = {'enable-local-file-access': None}
+            pdf = pdfkit.from_string(rendered, False, configuration=config, options=options)
+
+            response = make_response(pdf)
+            response.headers['Content-type'] = 'application/pdf'
+            response.headers['Content-Disposition'] = 'inline; filename=relatorio.pdf'
+
+            return response
 
     # show the form, it wasn't submitted
     return render_template('results.html',
