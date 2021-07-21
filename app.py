@@ -40,11 +40,6 @@ def __salvar_dados_csv():
     with open(BASE_DIR + '/surveys/survey_samp_1.csv','a+') as myfile: # use a+ to append and create file if it doesn't exist
             myfile.write(str_dados)
 
-    id_data.clear()
-    categoria_1_data.clear()
-    categoria_2_data.clear()
-    categoria_3_data.clear()
-
 
 # survey page
 @app.route("/", methods=['POST', 'GET'])
@@ -335,13 +330,44 @@ def results():
         if request.form['action'] == 'Gerar PDF':
            return pdfkit.from_file('templates/results.html', 'demo_from_file.pdf')
         
+    nome_examinador = id_data[1]
+    email = id_data[3]
+    nome_avaliado = id_data[2]
+ 
+    cat_1_min = min(int(categoria_1_data[0]), int(categoria_1_data[1]))
+    cat_1_max = max(int(categoria_1_data[0]), int(categoria_1_data[1]))
+    cat_1_avg = round((int(categoria_1_data[0]) + int(categoria_1_data[1])) / 2, 3)
+
+    cat_2_min = min(int(categoria_2_data[0]), int(categoria_2_data[1]), int(categoria_2_data[2]), int(categoria_2_data[3]), int(categoria_2_data[4]))
+    cat_2_max = max(int(categoria_2_data[0]), int(categoria_2_data[1]), int(categoria_2_data[2]), int(categoria_2_data[3]), int(categoria_2_data[4]))
+    cat_2_avg = round((int(categoria_2_data[0]) + int(categoria_2_data[1]) + int(categoria_2_data[2]) + int(categoria_2_data[3]) + int(categoria_2_data[4])) / 5, 3)
+
+    cat_3_min = min(int(categoria_3_data[0]), int(categoria_3_data[1]), int(categoria_3_data[2]), int(categoria_3_data[3]), int(categoria_3_data[4]), int(categoria_3_data[5]), int(categoria_3_data[6]), int(categoria_3_data[7]))
+    cat_3_max = max(int(categoria_3_data[0]), int(categoria_3_data[1]), int(categoria_3_data[2]), int(categoria_3_data[3]), int(categoria_3_data[4]), int(categoria_3_data[5]), int(categoria_3_data[6]), int(categoria_3_data[7]))
+    cat_3_avg = round((int(categoria_3_data[0]) + int(categoria_3_data[1]) + int(categoria_3_data[2]) + int(categoria_3_data[3]) + int(categoria_3_data[4]) + int(categoria_3_data[5]) + int(categoria_3_data[6]) + int(categoria_3_data[7])) / 8, 3)
+
+    avg_total = round((cat_1_avg + cat_2_avg + cat_3_avg) / 3, 3)
+
+    horario = id_data[0]
 
     # show the form, it wasn't submitted
-    return render_template('results.html')
+    return render_template('results.html',
+                            nome_examinador = nome_examinador,
+                            email = email,
+                            nome_avaliado = nome_avaliado,
+                            cat_1_min = cat_1_min,
+                            cat_1_max = cat_1_max,
+                            cat_1_avg = cat_1_avg,
+                            cat_2_min = cat_2_min,
+                            cat_2_max = cat_2_max,
+                            cat_2_avg = cat_2_avg,
+                            cat_3_min = cat_3_min,
+                            cat_3_max = cat_3_max,
+                            cat_3_avg = cat_3_avg,
+                            avg_total = avg_total,
+                            horario = horario)
     
     
-    
-
 
 # used only in local mode
 if __name__=='__main__':
