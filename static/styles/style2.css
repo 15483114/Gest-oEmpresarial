@@ -1,15 +1,17 @@
 /* Styling the Body element i.e. Color,
 Font, Alignment */
 body {
-    background-color: #232725;
+    background-color: #738580;
     font-family: Verdana;
     text-align: center;
 }
 
 /* Styling the Form (Color, Padding, Shadow) */
 form {
-    background-color: #fff;
-    max-width: 500px;
+    border-radius: 15px;
+    background-color: #BFCAD0;
+    min-width: 500px;
+    max-width: 40vw;
     margin: 50px auto;
     padding: 30px 20px;
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
@@ -38,7 +40,9 @@ select, textarea */
     padding: 10px;
     display: block;
     width: 95%;
+    text-align: center;
 }
+
 
 /* Styling form-control Radio
 button and Checkbox */
@@ -61,11 +65,12 @@ button {
     margin-bottom: 20px;
 }
 .logo-image img{
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 65px;
     margin-left: 20px;
     margin-top: 10px;
-    }
+    margin-bottom: 10px;
+}
 
 h1{
     color: #fff;
@@ -80,5 +85,5 @@ h1{
 }
 
 .fill {
-    background-color: rgb(112, 112, 112);
+    background-color: #474440;
 }
