@@ -3,6 +3,10 @@
     src: url(SourceSansPro-Regular.ttf);
   }
   
+  .content {
+    flex: 1 0 auto;
+  }
+
   .clearfix:after {
     content: "";
     display: table;
@@ -24,6 +28,8 @@
     font-family: Arial, sans-serif; 
     font-size: 14px; 
     font-family: SourceSansPro;
+    display: flex;
+    flex-direction: column;
   }
   
   header {
@@ -195,4 +201,5 @@
     border-top: 1px solid #AAAAAA;
     padding: 8px 0;
     text-align: center;
+    flex-shrink: 0;
   }
