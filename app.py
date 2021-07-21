@@ -341,6 +341,24 @@ def results():
 
     horario = id_data[0]
 
+    obs_1_1 = categoria_1_data[2]
+    obs_1_2 = categoria_1_data[3]
+
+    obs_2_1 = categoria_2_data[5]
+    obs_2_2 = categoria_2_data[6]
+    obs_2_3 = categoria_2_data[7]
+    obs_2_4 = categoria_2_data[8]
+    obs_2_5 = categoria_2_data[9]
+
+    obs_3_1 = categoria_3_data[8]
+    obs_3_2 = categoria_3_data[9]
+    obs_3_3 = categoria_3_data[10]
+    obs_3_4 = categoria_3_data[11]
+    obs_3_5 = categoria_3_data[12]
+    obs_3_6 = categoria_3_data[13]
+    obs_3_7 = categoria_3_data[14]
+    obs_3_8 = categoria_3_data[15]
+
     # show the form, it wasn't submitted
     return render_template('results.html',
                             nome_examinador = nome_examinador,
@@ -356,7 +374,22 @@ def results():
                             cat_3_max = cat_3_max,
                             cat_3_avg = cat_3_avg,
                             avg_total = avg_total,
-                            horario = horario)
+                            horario = horario,
+                            obs_1_1 = obs_1_1,
+                            obs_1_2 = obs_1_2,
+                            obs_2_1 = obs_2_1,
+                            obs_2_2 = obs_2_2,
+                            obs_2_3 = obs_2_3,
+                            obs_2_4 = obs_2_4,
+                            obs_2_5 = obs_2_5,
+                            obs_3_1 = obs_3_1,
+                            obs_3_2 = obs_3_2,
+                            obs_3_3 = obs_3_3,
+                            obs_3_4 = obs_3_4,
+                            obs_3_5 = obs_3_5,
+                            obs_3_6 = obs_3_6,
+                            obs_3_7 = obs_3_7,
+                            obs_3_8 = obs_3_8)
     
     
 
