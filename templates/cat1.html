@@ -17,7 +17,7 @@
 <body>
 
   <!-- Navbar -->
-    <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+    <div class="div2">
 
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large " href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <div class="logo-image">
@@ -31,7 +31,7 @@
     </div>
   
   
-    <h1>Sobre as habilidades pessoais e sociais do avaliado:</h1>
+    <h1 style="color: #373737;">Sobre as habilidades pessoais e sociais do avaliado:</h1>
 
     <span class="dot fill"></span>
     <span class="dot"></span>
@@ -61,7 +61,7 @@
           <label for="name" id="label-name">Email do examinador:</font><br>
           <input type="email" name="email" value="{{email}}">
         </div>
-  
+
   
         <div class="w3-center">
           <b><H3>Sobre o desempenho do avaliado:</H3></b>
@@ -86,10 +86,13 @@
           </div>
 
           <div class="form-control"></div>
- 
+            <label for="comment">
+              Comentários e sugestões
+            </label>
+  
             <!-- multi-line text input control -->
-            <input type= "textarea" name="pergunta_1_1" id="comment" rows="4" cols="30"placeholder="Comentários e sugestões"></textarea>{{pergunta_1_1}} 
-            </input>
+            <textarea name="pergunta_1_1" id="comment" rows="4" cols="30">{{pergunta_1_1}}
+            </textarea>
           </div>
         </div>
 
@@ -112,11 +115,13 @@
           </div>
 
           <div class="form-control"></div>
-
+            <label for="comment">
+              Comentários e sugestões
+            </label>
   
             <!-- multi-line text input control -->
-            <input type ="textarea" name="pergunta_1_2" id="comment" rows="4" cols="30" placeholder="Comentários e sugestões">{{pergunta_1_2}}
-          </input>
+            <textarea name="pergunta_1_2" id="comment" rows="4" cols="30">{{pergunta_1_2}}
+            </textarea>
           </div>
         </div>
 

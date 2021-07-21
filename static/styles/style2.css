@@ -1,7 +1,7 @@
 /* Styling the Body element i.e. Color,
 Font, Alignment */
 body {
-    background-color: #738580;
+    background-color: #DCD0C0;
     font-family: Verdana;
     text-align: center;
 }
@@ -9,7 +9,7 @@ body {
 /* Styling the Form (Color, Padding, Shadow) */
 form {
     border-radius: 15px;
-    background-color: #BFCAD0;
+    background-color: #F4f4f4;
     min-width: 500px;
     max-width: 40vw;
     margin: 50px auto;
@@ -74,6 +74,10 @@ button {
 
 h1{
     color: #fff;
+}
+
+.div2{
+    color: C0B283;
 }
 
 .dot {
