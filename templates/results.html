@@ -6,24 +6,8 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style_pdf.css') }}">
   </head>
 
-<!-- jQuery library -->
-<script src="js/jquery.min.js"></script>
 
-<!-- jsPDF library -->
-<script src="js/jsPDF/dist/jspdf.min.js"></script>
-
-  <script>
-      function convert_HTML_to_PDF(){
-          var doc = new jsPDF();
-          doc.fromHTML(elementHTML,15,15,{
-              'width':170
-          });
-          var elementHTML = $('#content').html();
-          doc.save('resultado-do-avaliado.pdf');
-      }
-  </script>
-
-  <body id= "content">
+  <body action="http://localhost:5000/results" id="results" method="POST">
     <header class="clearfix">
       <div id="logo">
         <img src="https://i.imgur.com/teCskCk.png">

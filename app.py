@@ -1,4 +1,5 @@
-from flask import Flask, session, app, render_template, request, Markup, url_for, redirect
+from flask import Flask, session, app, render_template, request, Markup, url_for, redirect, make_response
+import pdfkit
 import sys, io, re
 import os, base64
 from io import StringIO
@@ -6,8 +7,11 @@ from datetime import datetime
 import pandas as pd
 import time
 
-app = Flask(__name__)
 
+
+app = Flask(__name__)
+app.config['PDF_FOLDER'] = 'static/pdf/'
+app.config['TEMPLATE_FOLDER'] = 'templates/'
 # get root path for account in cloud
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -321,6 +325,11 @@ def cat3():
 
 @app.route("/results", methods=['POST', 'GET'])
 def results():
+    
+    if request.method == 'POST':
+        if request.form['action'] == 'Gerar PDF':
+           return pdfkit.from_file('templates/results.html', 'demo_from_file.pdf')
+        
     nome_examinador = id_data[1]
     email = id_data[3]
     nome_avaliado = id_data[2]
