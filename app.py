@@ -49,7 +49,6 @@ def cat1():
     nome_examinador = ''
     nome_avaliado = ''
     email = ''
-    genero = ''
     pergunta_1_1 = ''
     aval_1_1 = ''
     pergunta_1_2 = ''
@@ -62,7 +61,6 @@ def cat1():
             nome_examinador = request.form['nome_examinador'].strip()
             nome_avaliado = request.form['nome_avaliado'].strip()
             email = request.form['email'].strip()
-            genero = request.form['genero'].strip()
             pergunta_1_1 = request.form['pergunta_1_1'].strip()
             aval_1_1 = request.form['aval_1_1']
             pergunta_1_2 = request.form['pergunta_1_2'].strip()
@@ -77,8 +75,6 @@ def cat1():
                 missing_required_answers_list.append('Nome do avaliado')
             if email == '':
                 missing_required_answers_list.append('Email do examinador')
-            if genero == '':
-                missing_required_answers_list.append('Genêro do examinador')
 
             if aval_1_1 == '':
                 missing_required_answers_list.append('Avaliação para pergunta 1.1')
@@ -106,7 +102,6 @@ def cat1():
                 id_data.append(nome_examinador)
                 id_data.append(nome_avaliado)
                 id_data.append(email)
-                id_data.append(genero)
 
                 categoria_1_data.append(aval_1_1)
                 categoria_1_data.append(aval_1_2)
@@ -120,7 +115,6 @@ def cat1():
                             nome_examinador = nome_examinador,
                             nome_avaliado = nome_avaliado,
                             email = email,
-                            genero = genero,
                             pergunta_1_1 = pergunta_1_1,
                             aval_1_1 = aval_1_1,
                             pergunta_1_2 = pergunta_1_2,
@@ -327,8 +321,8 @@ def cat3():
 def results():
         
     nome_examinador = id_data[1]
-    email = id_data[3]
     nome_avaliado = id_data[2]
+    email = id_data[3]
  
     cat_1_min = min(int(categoria_1_data[0]), int(categoria_1_data[1]))
     cat_1_max = max(int(categoria_1_data[0]), int(categoria_1_data[1]))
