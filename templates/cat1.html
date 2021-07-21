@@ -62,12 +62,6 @@
           <input type="email" name="email" value="{{email}}">
         </div>
   
-        <div class="form-control">
-          <label for="genero">Genêro do examinador:</label>
-          <input type="radio" name="genero" value="Feminino"> Feminino</input><br>
-          <input type="radio" name="genero" value="Masculino"> Masculino</input><br>
-          <input type="radio" name="genero" value="Outro"> Outro</input> 
-        </div>
   
         <div class="w3-center">
           <b><H3>Sobre o desempenho do avaliado:</H3></b>
@@ -92,13 +86,10 @@
           </div>
 
           <div class="form-control"></div>
-            <label for="comment">
-              Comentários e sugestões
-            </label>
-  
+ 
             <!-- multi-line text input control -->
-            <textarea name="pergunta_1_1" id="comment" rows="4" cols="30">{{pergunta_1_1}}
-            </textarea>
+            <input type= "textarea" name="pergunta_1_1" id="comment" rows="4" cols="30"placeholder="Comentários e sugestões"></textarea>{{pergunta_1_1}} 
+            </input>
           </div>
         </div>
 
@@ -121,13 +112,11 @@
           </div>
 
           <div class="form-control"></div>
-            <label for="comment">
-              Comentários e sugestões
-            </label>
+
   
             <!-- multi-line text input control -->
-            <textarea name="pergunta_1_2" id="comment" rows="4" cols="30">{{pergunta_1_2}}
-            </textarea>
+            <input type ="textarea" name="pergunta_1_2" id="comment" rows="4" cols="30" placeholder="Comentários e sugestões">{{pergunta_1_2}}
+          </input>
           </div>
         </div>
 
