@@ -7,122 +7,125 @@
   </head>
 
 
-  <body action="http://localhost:5000/results" id="results" method="POST">
-    <header class="clearfix">
-      <div id="logo">
-        <img src="https://i.imgur.com/teCskCk.png">
-      </div>
-      <div id="company">
-        <h2 class="name">{{nome_examinador}}</h2>
-        <div>{{email}}</div>
-      </div>
-      </div>
-    </header>
-
-    <div class="content">
-      <main>
-        <div id="details" class="clearfix">
-          <div id="client">
-            <div class="to">Nome do avaliado:</div>
-            <h2 class="name">{{nome_avaliado}}</h2>
-          </div>
-          <div id="invoice">
-            <h1>AVDITech</h1>
-          </div>
+  <body>
+    <form action="http://localhost:5000/results" id="results" method="POST">
+      <header class="clearfix">
+        <div id="logo">
+          <img src="https://i.imgur.com/teCskCk.png">
         </div>
-        <table border="0" cellspacing="0" cellpadding="0">
-          <thead>
-            <tr>
-        <th class="no">Item N#</th>
-              <th class="desc">Descrição</th>
-              <th class="menornota">Menor nota</th>
-              <th class="maiornota">Maior nota</th>
-              <th class="total">MÉDIA</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-        <th class="no">1</th>		  
-              <td class="desc"><h3>AVALIAÇÃO DE DESEMPENHO</h3></td>
-              <td class="menornota">{{cat_1_min}}</td>
-              <td class="maiornota">{{cat_1_max}}</td>
-              <td class="total">{{cat_1_avg}}</td>
-            </tr>
-            <tr>
-        <th class="no">2</th>		  
-              <td class="desc"><h3>AVALIAÇÃO COMPORTAMENTAL</h3></td>
-              <td class="menornota">{{cat_2_min}}</td>
-              <td class="maiornota">{{cat_2_max}}</td>
-              <td class="total">{{cat_2_avg}}</td>
-            </tr>
-            <tr>
-        <th class="no">3</th>		  
-              <td class="desc"><h3>AVALIAÇÃO DE HABILIDADES PESSOAIS E SOCIAIS</h3></td>
-              <td class="menornota">{{cat_3_min}}</td>
-              <td class="maiornota">{{cat_3_max}}</td>
-              <td class="total">{{cat_3_avg}}</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="2"></td>
-              <td colspan="2">MÉDIA FINAL</td>
-              <td>{{avg_total}}</td>
-            </tr>
-          </tfoot>
-        </table>
-
-        <h2>Observações pergunta 1 categoria 1</h2>
-          {{obs_1_1}}
-        <br>
-        <h2>Observações pergunta 2 categoria 1</h2>
-          {{obs_1_2}}
-        <br>
-        <h2>Observações pergunta 1 categoria 2</h2>
-          {{obs_2_1}}
-        <br>
-        <h2>Observações pergunta 2 categoria 2</h2>
-          {{obs_2_2}}
-        <br>
-        <h2>Observações pergunta 3 categoria 2</h2>
-          {{obs_2_3}}
-        <br>
-        <h2>Observações pergunta 4 categoria 2</h2>
-          {{obs_2_4}}
-        <br>
-        <h2>Observações pergunta 5 categoria 2</h2>
-          {{obs_2_5}}
-        <br>
-        <h2>Observações pergunta 1 categoria 3</h2>
-          {{obs_3_1}}
-        <br>
-        <h2>Observações pergunta 2 categoria 3</h2>
-          {{obs_3_2}}
-        <br>
-        <h2>Observações pergunta 3 categoria 3</h2>
-          {{obs_3_3}}
-        <br>
-        <h2>Observações pergunta 4 categoria 3</h2>
-          {{obs_3_4}}
-        <br>
-        <h2>Observações pergunta 5 categoria 3</h2>
-          {{obs_3_5}}
-        <br>
-        <h2>Observações pergunta 6 categoria 3</h2>
-          {{obs_3_6}}
-        <br>
-        <h2>Observações pergunta 7 categoria 3</h2>
-          {{obs_3_7}}
-        <br>
-        <h2>Observações pergunta 8 categoria 3</h2>
-          {{obs_3_8}}
-        <br>
-
-        <div id="thanks">Clique no botão abaixo para gerar o PDF</div>
-        <div id="notices">
+        <div id="company">
+          <h2 class="name">{{nome_examinador}}</h2>
+          <div>{{email}}</div>
         </div>
-      </main>
-      <button >Gerar PDF</button>
-    </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <main>
+          <div id="details" class="clearfix">
+            <div id="client">
+              <div class="to">Nome do avaliado:</div>
+              <h2 class="name">{{nome_avaliado}}</h2>
+            </div>
+            <div id="invoice">
+              <h1>AVDITech</h1>
+            </div>
+          </div>
+          <table border="0" cellspacing="0" cellpadding="0">
+            <thead>
+              <tr>
+          <th class="no">Item N#</th>
+                <th class="desc">Descrição</th>
+                <th class="menornota">Menor nota</th>
+                <th class="maiornota">Maior nota</th>
+                <th class="total">MÉDIA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+          <th class="no">1</th>		  
+                <td class="desc"><h3>AVALIAÇÃO DE DESEMPENHO</h3></td>
+                <td class="menornota">{{cat_1_min}}</td>
+                <td class="maiornota">{{cat_1_max}}</td>
+                <td class="total">{{cat_1_avg}}</td>
+              </tr>
+              <tr>
+          <th class="no">2</th>		  
+                <td class="desc"><h3>AVALIAÇÃO COMPORTAMENTAL</h3></td>
+                <td class="menornota">{{cat_2_min}}</td>
+                <td class="maiornota">{{cat_2_max}}</td>
+                <td class="total">{{cat_2_avg}}</td>
+              </tr>
+              <tr>
+          <th class="no">3</th>		  
+                <td class="desc"><h3>AVALIAÇÃO DE HABILIDADES PESSOAIS E SOCIAIS</h3></td>
+                <td class="menornota">{{cat_3_min}}</td>
+                <td class="maiornota">{{cat_3_max}}</td>
+                <td class="total">{{cat_3_avg}}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2"></td>
+                <td colspan="2">MÉDIA FINAL</td>
+                <td>{{avg_total}}</td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <h2>Observações pergunta 1 categoria 1</h2>
+            {{obs_1_1}}
+          <br>
+          <h2>Observações pergunta 2 categoria 1</h2>
+            {{obs_1_2}}
+          <br>
+          <h2>Observações pergunta 1 categoria 2</h2>
+            {{obs_2_1}}
+          <br>
+          <h2>Observações pergunta 2 categoria 2</h2>
+            {{obs_2_2}}
+          <br>
+          <h2>Observações pergunta 3 categoria 2</h2>
+            {{obs_2_3}}
+          <br>
+          <h2>Observações pergunta 4 categoria 2</h2>
+            {{obs_2_4}}
+          <br>
+          <h2>Observações pergunta 5 categoria 2</h2>
+            {{obs_2_5}}
+          <br>
+          <h2>Observações pergunta 1 categoria 3</h2>
+            {{obs_3_1}}
+          <br>
+          <h2>Observações pergunta 2 categoria 3</h2>
+            {{obs_3_2}}
+          <br>
+          <h2>Observações pergunta 3 categoria 3</h2>
+            {{obs_3_3}}
+          <br>
+          <h2>Observações pergunta 4 categoria 3</h2>
+            {{obs_3_4}}
+          <br>
+          <h2>Observações pergunta 5 categoria 3</h2>
+            {{obs_3_5}}
+          <br>
+          <h2>Observações pergunta 6 categoria 3</h2>
+            {{obs_3_6}}
+          <br>
+          <h2>Observações pergunta 7 categoria 3</h2>
+            {{obs_3_7}}
+          <br>
+          <h2>Observações pergunta 8 categoria 3</h2>
+            {{obs_3_8}}
+          <br>
+
+          <div id="thanks">Clique no botão abaixo para gerar o PDF</div>
+          <div id="notices">
+          </div>
+        </main>
+
+        <input type="submit" name="action" value='Gera pdf'>
+      </div>
+    </form>
   </body>
 </html>
